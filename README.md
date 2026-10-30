@@ -1,104 +1,86 @@
-Student Data Warehouse — Full Project README
+NammaTrip AI
 
-Overview
-The Student Data Warehouse is a full‑stack platform to manage student profiles, placements, research projects, clubs, skills, and achievements. It includes a React + TypeScript frontend and a Node.js + Express + MySQL backend with JWT authentication and role‑based access control.
+AI-Based Travel Planner for Karnataka
 
-Tech Stack
-- Frontend: React (Vite), TypeScript, Tailwind CSS, React Router, React Query, Zustand
-- Backend: Node.js, Express.js, MySQL (mysql2/promise), Joi validation, Multer uploads
-- Auth: JWT with role‑based authorization
+About the Project
 
-Repository Structure
-./
-├── backend/   API server, services, models, controllers, routes, migrations
-└── frontend/  Web client, pages, components, stores, API layer
+NammaTrip AI is a travel planning application developed to help people plan their trips across Karnataka. Planning a trip usually involves searching for destinations, checking expenses and deciding how to spend each day. Our application aims to make this process easier.
 
-Roles & Access
-- Admin: Full control across modules
-- CIR: Company and placements management
-- Faculty: Research projects and participants
-- Student: Profile, invitations, and placements visibility
+Users can enter their travel details, such as starting location, budget, number of days, interests and travel preferences. Based on these inputs, the application generates a suggested travel itinerary.
 
-Quick Start
-Prerequisites
-- Node.js 16+
-- MySQL 8+
-- npm (or yarn)
+Problem Statement
 
-Backend (API)
-1) cd backend
-2) npm install
-3) Copy env.example to .env and configure MySQL and JWT
-   Example:
-   MYSQL_HOST=localhost
-   MYSQL_PORT=3306
-   MYSQL_USER=root
-   MYSQL_PASSWORD=your-password
-   MYSQL_DATABASE=student_dw
-   JWT_SECRET=your-jwt-secret
-   PORT=4000
-4) Run database migrations: npm run migrate
-5) Optional seed data: npm run seed
-6) Start development server: npm run dev
-   API available at http://localhost:4000 (base path /api)
+Problem 06 – AI Travel Planner for Karnataka
 
-Frontend (Web App)
-1) cd frontend
-2) npm install
-3) Copy env.example to .env
-4) Set API base URL: VITE_API_BASE_URL=http://localhost:4000/api
-5) Start development server: npm run dev
-   App available at http://localhost:5173 (Vite will use the next port if 5173 is busy)
+The objective is to develop an AI-powered travel planner that creates personalized Karnataka itineraries based on a traveller’s interests, available time, budget and preferred type of experience.
 
-Configuration
-- Backend: See backend/env.example for DB and auth settings
-- Frontend: Set VITE_API_BASE_URL to your API (defaults to http://localhost:4000/api)
+Features
 
-Core Features
-- Authentication: Login, JWT management, role‑based navigation
-- Students: List, search, filter, profile details, skills/interests
-- Companies & Job Roles: Manage companies, create/update/delete job roles
-- Placements & Invitations: Offer tracking, suggest students via invitations, status updates
-- Research Projects: View projects and participants, faculty management
-- Skills & Interests: Catalog management and student association
-- Clubs: Club creation and invitations (with role checks)
+* Selection of starting city.
+* Customizable trip duration.
+* Travel budget selection.
+* Number of travellers selection.
+* Interest-based destination recommendations.
+* Different travel style options.
+* Transportation preferences.
+* Day-wise itinerary generation.
+* Estimated travel expenses.
+* Downloadable travel itinerary.
 
-API Basics
-- Base URL: http://localhost:4000/api
-- Format: JSON with standardized success/error shape
-- Auth: Bearer JWT required for protected routes
+Technologies Used
 
-Scripts
-Backend:
-- npm run dev     Start dev server
-- npm start       Start production server
-- npm run migrate Apply database migrations
-- npm run seed    Seed baseline data
-- npm test        Run tests
+* Python
+* Streamlit
+* Google Gemini API
+* Pandas
+* GitHub
 
-Frontend:
-- npm run dev     Start dev server
-- npm run build   Build for production
-- npm run preview Preview production build
-- npm run lint    Run ESLint
+How the Application Works
 
-Build & Deploy
-Frontend:
-- npm run build creates a production bundle in frontend/dist/
-- Serve static files via Nginx/Apache or the backend if integrated
+1. Open the NammaTrip AI application.
+2. Select your starting city.
+3. Enter your trip duration and budget.
+4. Select the number of travellers.
+5. Choose your interests and preferred travel style.
+6. Select your transportation preference.
+7. Click on the Generate My Itinerary button.
+8. View the suggested travel plan and estimated expenses.
 
-Backend:
-- npm start runs the API
-- Use a process manager (PM2/system service)
-- Configure environment variables and secure JWT secrets
+Installation and Setup
 
-Troubleshooting
-- If the frontend doesn’t load, confirm VITE_API_BASE_URL matches your backend port and path (/api)
-- If port 5173 is busy, Vite will use the next available port (e.g., 5174)
-- Check backend logs for validation/authorization errors; ensure roles are correct
+Clone the repository:
 
-Contributing
-- Keep changes scoped and consistent with existing patterns
-- Add loading/error states for async features
-- Follow TypeScript and linting guidelines
+git clone https://github.com/yaminimalreddy/NammaTrip-AI.git
 
+Navigate to the project folder:
+
+cd NammaTrip-AI
+
+Install the required packages:
+
+pip install -r requirements.txt
+
+Run the application:
+
+streamlit run app.py
+
+AI Configuration
+
+The application supports Google Gemini API integration. Users can configure their Gemini API key through Streamlit secrets or environment variables.
+
+An offline itinerary generation option is also available when an API key is not configured.
+
+Future Scope
+
+* Integration of interactive maps.
+* Improved transportation recommendations.
+* Weather information for travel destinations.
+* Hotel and accommodation suggestions.
+* Kannada language support.
+* More detailed travel cost estimation.
+
+Conclusion
+
+NammaTrip AI is an attempt to make travel planning across Karnataka easier and more convenient. By considering individual preferences and budgets, the application helps travellers explore different destinations and plan their journeys more effectively.
+
+Selected Problem Statement: Problem 06 – AI Travel Planner for Karnataka.
